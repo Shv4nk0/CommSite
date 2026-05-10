@@ -38,7 +38,7 @@ const Footer = () => {
 							threshold: 0,
 							rootMargin: "0px 0px -8% 0px",
 						},
-				  )
+					)
 				: null;
 
 		observer?.observe(footerElement);
@@ -70,16 +70,19 @@ const Footer = () => {
 				>
 					<div className="space-y-4">
 						<div className="flex items-center gap-3">
-							<div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-bold text-zinc-950">
-								Z
+							<span className="h-9 w-px bg-white/25" aria-hidden="true" />
+							<div className="flex flex-col">
+								<p className="text-base font-semibold leading-none tracking-[0.14em]">
+									Загородный отдых
+								</p>
+								<p className="mt-1 text-[10px] font-medium uppercase leading-none tracking-[0.24em] text-white/45">
+									баня, чан, прогулки
+								</p>
 							</div>
-							<p className="text-lg font-semibold tracking-[0.12em]">
-								ZAKAZNOY
-							</p>
 						</div>
 
 						<p className="max-w-md text-sm leading-6 text-white/60">
-							Пространство для отдыха, встреч и спокойного времени за городом.
+							Пространство для отдыха, встреч и спокойного времяпрепровождения.
 						</p>
 					</div>
 
@@ -94,25 +97,25 @@ const Footer = () => {
 								className="flex items-center gap-3 transition hover:text-white"
 							>
 								<Phone className="h-4 w-4 flex-shrink-0 text-white/50" />
-								<span>+7 (999) 123-45-67</span>
+								<span>+7 (901) 565-51-23</span>
 							</a>
 
 							<a
-								href="mailto:info@zakaznoy.ru"
+								href="mailto:tatianaminikova25@gmail.com"
 								className="flex items-center gap-3 transition hover:text-white"
 							>
 								<Mail className="h-4 w-4 flex-shrink-0 text-white/50" />
-								<span>info@zakaznoy.ru</span>
+								<span>tatianaminikova25@gmail.com</span>
 							</a>
 
 							<a
-								href="https://t.me/zakaznoy_support"
+								href="https://t.me/tatianaminikova25"
 								target="_blank"
 								rel="noreferrer"
 								className="flex items-center gap-3 transition hover:text-white"
 							>
 								<Send className="h-4 w-4 flex-shrink-0 text-white/50" />
-								<span>@zakaznoy_support</span>
+								<span>@tatianaminikova25</span>
 							</a>
 						</div>
 					</div>
@@ -121,7 +124,7 @@ const Footer = () => {
 				<div
 					className={`mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-sm text-white/45 opacity-100 transition-all duration-700 delay-100 translate-y-0 md:flex-row md:items-center md:justify-between ${animatedSectionClass}`}
 				>
-					<p>&copy; 2026 Zakaznoy</p>
+					<p>&copy; 2026</p>
 					<p>Бронь и вопросы по телефону или в Telegram</p>
 				</div>
 			</div>

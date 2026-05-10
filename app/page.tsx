@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<div className="min-h-screen bg-[#fcfcfc] font-sans text-zinc-950">
 			<Header
-			// logo="Zakaznoy"
+			// heading="Загородный отдых"
 			// phone="+7 (999) 123-45-67"
 			// email="info@zakaznoy.ru"
 			// telegram="zakaznoy_support"

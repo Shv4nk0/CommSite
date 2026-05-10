@@ -4,7 +4,7 @@ import { ArrowRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface HeaderProps {
-	logo?: string;
+	heading?: string;
 	phone?: string;
 	email?: string;
 	telegram?: string;
@@ -13,10 +13,10 @@ interface HeaderProps {
 type SectionTarget = "hero" | "services" | "contact";
 
 const Header = ({
-	logo = "Zakaznoy",
+	heading = "Загородный отдых",
 	phone = "+7 (901) 565-51-23",
 	email = "tatianaminikova25@gmail.com",
-	telegram = "zakaznoy_support",
+	telegram = "tatianaminikova25",
 }: HeaderProps) => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,20 +66,30 @@ const Header = ({
 			className={`fixed inset-x-0 top-0 z-30 w-full transition-all duration-500 ${headerSurface}`}
 		>
 			<div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 md:px-8">
-				<div className="flex items-center justify-between gap-3">
-					<div className="flex items-center gap-3">
-						<div className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-950 text-sm font-bold text-white sm:h-11 sm:w-11">
-							{logo.charAt(0)}
+				<div className="flex items-center justify-between gap-3 md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+					<div className="flex min-w-0 items-center gap-3 justify-self-start">
+						<span
+							className={`h-9 w-px transition-colors duration-500 ${
+								isScrolled ? "bg-zinc-300" : "bg-white/40"
+							}`}
+							aria-hidden="true"
+						/>
+						<div className="flex flex-col">
+							<p
+								className={`whitespace-nowrap text-sm font-semibold leading-none tracking-[0.14em] transition-colors duration-500 sm:text-base ${accentText}`}
+							>
+								{heading}
+							</p>
+							<p
+								className={`mt-1 whitespace-nowrap text-[10px] font-medium uppercase leading-none tracking-[0.24em] transition-colors duration-500 ${mutedText}`}
+							>
+								баня, чан, прогулки
+							</p>
 						</div>
-						<p
-							className={`text-sm font-semibold tracking-[0.12em] transition-colors duration-500 sm:text-base ${accentText}`}
-						>
-							{logo}
-						</p>
 					</div>
 
 					<nav
-						className={`hidden items-center gap-6 rounded-full px-6 py-3 text-sm font-medium shadow-[0_20px_70px_-40px_rgba(15,23,42,0.4)] backdrop-blur-md transition-all duration-500 md:flex ${navSurface}`}
+						className={`hidden items-center gap-6 justify-self-center rounded-full px-6 py-3 text-sm font-medium shadow-[0_20px_70px_-40px_rgba(15,23,42,0.4)] backdrop-blur-md transition-all duration-500 md:flex ${navSurface}`}
 					>
 						<button
 							type="button"
@@ -107,7 +117,7 @@ const Header = ({
 					<button
 						type="button"
 						onClick={() => scrollToSection("contact")}
-						className={`hidden items-center justify-center rounded-full px-5 py-3 text-sm font-semibold shadow-sm transition-all duration-500 md:inline-flex ${
+						className={`hidden items-center justify-center justify-self-end rounded-full px-5 py-3 text-sm font-semibold shadow-sm transition-all duration-500 md:inline-flex ${
 							isScrolled
 								? "bg-yellow-400 text-zinc-950 hover:bg-yellow-500"
 								: "bg-white text-zinc-950 hover:bg-zinc-100"
@@ -125,7 +135,7 @@ const Header = ({
 
 					<button
 						type="button"
-						className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition md:hidden ${
+						className={`inline-flex h-11 w-11 items-center justify-center justify-self-end rounded-full border transition md:hidden ${
 							isScrolled
 								? "border-zinc-200 bg-white text-zinc-950"
 								: "border-white/20 bg-black/15 text-white"
@@ -142,13 +152,19 @@ const Header = ({
 					</button>
 				</div>
 
-				<div
-					className={`mt-3 hidden items-center justify-between gap-3 pt-2 text-[11px] uppercase tracking-[0.3em] transition-colors duration-500 md:flex ${mutedText}`}
+				{/* <div
+					className={`mt-3 hidden grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 pt-2 text-[11px] uppercase tracking-[0.3em] transition-colors duration-500 md:grid ${mutedText}`}
 				>
-					<span>Тел: {phone}</span>
-					<span>Почта: {email}</span>
-					<span>Telegram: @{telegram}</span>
-				</div>
+					<span className="justify-self-start whitespace-nowrap">
+						Тел: {phone}
+					</span>
+					<span className="justify-self-center whitespace-nowrap">
+						Почта: {email}
+					</span>
+					<span className="justify-self-end whitespace-nowrap">
+						Telegram: @{telegram}
+					</span>
+				</div> */}
 
 				{isMobileMenuOpen ? (
 					<div
